@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Core", "Hangfire.Core.csproj", "{7A39A4CC-FB93-41AB-986D-CB176160C88F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.SqlServer", "..\Hangfire.SqlServer\Hangfire.SqlServer.csproj", "{D8B4252D-BFEE-444C-9C29-37F06EDB128A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Web", "..\Hangfire.Web\Hangfire.Web.csproj", "{57CDA615-42A6-4C8D-8C7D-D51D9DEDA3E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Common.Plugin", "..\Hangfire.Common.Plugin\Hangfire.Common.Plugin.csproj", "{51AEE71F-C9CA-41F2-A744-5518FA198F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.NodeServices", "..\Hangfire.NodeServices\Hangfire.NodeServices.csproj", "{3D16EE99-3B06-409D-89C5-486F536F17BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Console", "..\Hangfire.Console\Hangfire.Console.csproj", "{6CA06985-6EAA-4DDF-8694-FA715F3CA958}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A39A4CC-FB93-41AB-986D-CB176160C88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A39A4CC-FB93-41AB-986D-CB176160C88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A39A4CC-FB93-41AB-986D-CB176160C88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A39A4CC-FB93-41AB-986D-CB176160C88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B4252D-BFEE-444C-9C29-37F06EDB128A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B4252D-BFEE-444C-9C29-37F06EDB128A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B4252D-BFEE-444C-9C29-37F06EDB128A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B4252D-BFEE-444C-9C29-37F06EDB128A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CDA615-42A6-4C8D-8C7D-D51D9DEDA3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CDA615-42A6-4C8D-8C7D-D51D9DEDA3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CDA615-42A6-4C8D-8C7D-D51D9DEDA3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CDA615-42A6-4C8D-8C7D-D51D9DEDA3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AEE71F-C9CA-41F2-A744-5518FA198F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AEE71F-C9CA-41F2-A744-5518FA198F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AEE71F-C9CA-41F2-A744-5518FA198F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AEE71F-C9CA-41F2-A744-5518FA198F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D16EE99-3B06-409D-89C5-486F536F17BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D16EE99-3B06-409D-89C5-486F536F17BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D16EE99-3B06-409D-89C5-486F536F17BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D16EE99-3B06-409D-89C5-486F536F17BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA06985-6EAA-4DDF-8694-FA715F3CA958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA06985-6EAA-4DDF-8694-FA715F3CA958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA06985-6EAA-4DDF-8694-FA715F3CA958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA06985-6EAA-4DDF-8694-FA715F3CA958}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF785FF8-C2D5-4CD7-9894-EF6871F087D7}
+	EndGlobalSection
+EndGlobal

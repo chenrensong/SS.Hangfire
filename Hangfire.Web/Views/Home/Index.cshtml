@@ -1,0 +1,313 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row" itemscope="" itemtype="http://schema.org/SoftwareApplication">
+            <div class="col-md-7">
+                <h1 itemprop="name">Hangfire</h1>
+                <p style="margin-bottom: 10px;">
+                    An easy way to perform background processing in .NET and .NET Core applications.
+                    No Windows Service or separate process required.
+                </p>
+                <p>
+                    Backed by persistent storage. Open and free for commercial use.
+                </p>
+
+            </div>
+            <div class="col-md-5">
+                <div id="screenshots" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#screenshots" data-slide-to="0" class="">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="1" class="">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="2" class="active">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="3">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="4">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="5">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="6">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="7">
+                        </li>
+                        <li data-target="#screenshots" data-slide-to="8">
+                        </li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/dashboard.png" target="_blank" data-lightbox="Screenshots" data-title="Dashboard">
+                                <img itemprop="image" src="./images/dashboard-sm.png" alt="Dashboard">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/queues.png" target="_blank" data-lightbox="Screenshots" data-title="Queue List">
+                                <img src="./images/queues-sm.png" alt="Queue List">
+                            </a>
+                        </div>
+                        <div class="item active">
+                            <a href="https://www.hangfire.io/img/ui/job-details.png" target="_blank" data-lightbox="Screenshots" data-title="Job Details">
+                                <img src="./images/job-details-sm.png" alt="Job Details">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/retries.png" target="_blank" data-lightbox="Screenshots" data-title="Retry List">
+                                <img src="./images/retries-sm.png" alt="Retry List">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/failed-jobs.png" target="_blank" data-lightbox="Screenshots" data-title="Failed Job List">
+                                <img src="./images/failed-jobs-sm.png" alt="Failed Job List">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/recurring-jobs.png" target="_blank" data-lightbox="Screenshots" data-title="Recurring Jobs">
+                                <img src="./images/recurring-jobs-sm.png" alt="Recurring Jobs">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/batches.png"  target="_blank" data-lightbox="Screenshots" title="Batch List">
+                                <img src="./images/batches-sm.png" alt="Batch List">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/batch-details.png" target="_blank" data-lightbox="Screenshots" title="Batch Details">
+                                <img src="./images/batch-details-sm.png" alt="Batch Details">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.hangfire.io/img/ui/batch-jobs.png" target="_blank" data-lightbox="Screenshots" title="Batch Jobs">
+                                <img src="./images/batch-jobs-sm.png" alt="Batch Jobs">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="https://www.hangfire.io/#screenshots" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="https://www.hangfire.io/#screenshots" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Fire-and-forget jobs</h3>
+                    <p>
+                        Fire-and-forget jobs are executed <strong>only once</strong> and almost <strong>immediately</strong> after creation.
+                    </p>
+                    <pre><span class="keywd">var</span> jobId = <span class="type">BackgroundJob</span>.Enqueue(
+    () =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Fire-and-forget!"</span>));</pre>
+                </div>
+                <div class="col-md-6">
+                    <h3>Delayed jobs</h3>
+                    <p>
+                        Delayed jobs are executed <strong>only once</strong> too, but not immediately, after a certain <strong>time interval</strong>.
+                    </p>
+                    <pre><span class="keywd">var</span> jobId = <span class="type">BackgroundJob</span>.Schedule(
+    () =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Delayed!"</span>),
+                    <span class="type">TimeSpan</span>.FromDays(7));</pre>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Recurring jobs</h3>
+                    <p>
+                        Recurring jobs fire <strong>many times</strong> on the specified <strong>CRON schedule</strong>.
+                    </p>
+                    <pre><span class="type">RecurringJob</span>.AddOrUpdate(
+    () =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Recurring!"</span>),
+                    <span class="type">Cron</span>.Daily);</pre>
+                </div>
+                <div class="col-md-6">
+                    <h3>Continuations</h3>
+                    <p>
+                        Continuations are executed when its parent job <strong>has been finished</strong>.
+                    </p>
+                    <pre><span class="type">BackgroundJob</span>.ContinueWith(
+    jobId,
+    () =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Continuation!"</span>));</pre>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h3>
+                        Batches <div class="label label-primary">Pro</div>
+                    </h3>
+                    <p>Batch is a group of background jobs that is <strong>created atomically</strong> and considered as a single entity.</p>
+                    <pre><code><span class="keywd">var</span> batchId = <span class="type">BatchJob</span>.StartNew(x =&gt;
+{
+    x.Enqueue(() =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Job 1"</span>));
+    x.Enqueue(() =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Job 2"</span>));
+});</code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h3>
+                        Batch Continuations <div class="label label-primary">Pro</div>
+                    </h3>
+                    <p>
+                        Batch continuation is fired <strong>when all</strong> background jobs in a parent batch <strong>finished</strong>.
+                    </p>
+                    <pre><code><span class="type">BatchJob</span>.ContinueWith(batchId, x =&gt;
+{
+    x.Enqueue(() =&gt; <span class="type">Console</span>.WriteLine(<span class="string">"Last Job"</span>));
+});</code></pre>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-send"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Simple</h3>
+                    <p>
+                        <a href="http://docs.hangfire.io/en/latest/quick-start.html" target="_blank">Easy to set up, easy to use</a>. No Windows Service, no Windows Scheduler, no separate applications required.
+                    </p>
+                    <p>
+                        Background jobs are regular static or instance .NET methods with regular arguments – no base class or interface implementation required.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-floppy-saved"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Persistent</h3>
+                    <p>
+                        Background jobs are created in a persistent storage&nbsp;– <a href="https://www.nuget.org/packages/HangFire.SqlServer/">SQL Server</a>, <a href="https://nuget.hangfire.io/feeds/hangfire-pro/Hangfire.Pro.Redis/1.2.1">Redis</a>, <a href="https://www.nuget.org/packages/Hangfire.PostgreSql/">PostgreSQL</a>, <a href="https://www.nuget.org/packages/HangFire.Mongo/">MongoDB</a> and <a href="https://www.hangfire.io/extensions.html#storages">others</a>.
+                    </p>
+                    <p>
+                        You can safely restart your application and use Hangfire with ASP.NET without worrying about application pool recycles.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Transparent</h3>
+                    <p>
+                        Built-in web interface allow you to see the whole picture of your background processing, as well as observe the state of each background job.
+                    </p>
+                    <p>
+                        Out of the box support for popular <a href="http://docs.hangfire.io/en/latest/configuration/configuring-logging.html">logging frameworks</a> allows you to catch errors early with zero configuration.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-tower"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Reliable</h3>
+                    <p>
+                        Once a background job was created without any exception, Hangfire takes the responsibility to process it with the <em>at least once</em> semantics.
+                    </p>
+                    <p>
+                        You are free to throw unhandled exceptions or terminate your application – background jobs will be re-tried automatically.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-fullscreen"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Distributed</h3>
+                    <p>
+                        Background method calls and their arguments are serialized and may overcome the process boundaries.
+                    </p>
+                    <p>
+                        You can use Hangfire on different machines to get more processing power with no configuration – synchronization is performed automatically.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-th-large"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Extensible</h3>
+                    <p>
+                        Job filters allow you to add custom features to the background processing in a way similar to ASP.NET MVC action filters.
+                    </p>
+                    <p>
+                        Job storage access is fully abstracted and you can implement the support for your favorite storage. Dashboard supports modifications too.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-flash"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Efficient</h3>
+                    <p>
+                        Although the default installation uses SQL Server and polling technique to fetch jobs, you can leverage <a href="https://www.nuget.org/packages/Hangfire.SqlServer.MSMQ/">MSMQ</a> or <a href="https://www.nuget.org/packages/Hangfire.Redis/" target="_blank">Redis</a> extensions to reduce the processing latency to minimum.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </div>
+                <div class="feature-body">
+                    <h3>Self-maintainable</h3>
+                    <p>
+                        You don't need to perform manual storage clean-up&nbsp;– Hangfire keeps it as clean as possible and removes old records automatically.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 feature">
+                <div class="feature-icon">
+                    <i class="fa fa-github" style="font-size: 23px;"></i>
+                </div>
+                <div class="feature-body">
+                    <h3>Open source</h3>
+                    <p>
+                        Hangfire is open source software and is completely free for commercial use. It is licensed under <a href="https://github.com/HangfireIO/Hangfire/blob/master/LICENSE.md">LGPLv3 license</a>.
+                    </p>
+                    <p>
+                        Fork <a href="https://github.com/HangfireIO/Hangfire" target="_blank">the project</a> and make contributions on GitHub!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <hr>
+                <div>
+                    <a class="btn btn-primary btn-lg" href="https://www.hangfire.io/overview.html">Overview</a>
+                    <br class="visible-xs">
+                    <span class="btn btn-lg">or</span>
+                    <br class="visible-xs">
+                    <a class="btn btn-default btn-lg" href="http://docs.hangfire.io/">Documentation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

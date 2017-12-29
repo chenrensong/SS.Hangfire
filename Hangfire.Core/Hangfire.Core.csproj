@@ -1,0 +1,327 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Hangfire</RootNamespace>
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dashboard\Content\css\chosen.min.css" />
+    <None Remove="Dashboard\Content\js\chosen.jquery.min.js" />
+    <None Remove="Dashboard\Content\js\cron.js" />
+    <None Remove="Dashboard\Pages\HTMLPage1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dashboard\Pages\HTMLPage1.cshtml">
+      <Generator>RazorGenerator</Generator>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Dashboard\Content\css\bootstrap.min.css" />
+    <EmbeddedResource Include="Dashboard\Content\css\chosen.min.css" />
+    <EmbeddedResource Include="Dashboard\Content\css\hangfire.css" />
+    <EmbeddedResource Include="Dashboard\Content\css\rickshaw.min.css" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.svg" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.woff" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <EmbeddedResource Include="Dashboard\Content\js\bootstrap.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\chosen.jquery.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\cron.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\d3.layout.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\d3.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\hangfire.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\jquery-2.1.4.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\moment-with-locales.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\moment.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\rickshaw.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Packages\MoreLinq\" />
+    <Folder Include="Filters\Client\" />
+    <Folder Include="Filters\Server\" />
+    <Folder Include="Filters\States\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dashboard\Content\resx\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\AwaitingJobsPage.generated.cs">
+      <DependentUpon>AwaitingJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\Breadcrumbs.cs">
+      <DependentUpon>_Breadcrumbs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\BlockMetric.cs">
+      <DependentUpon>_BlockMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\CornJobsPage.generated.cs">
+      <DependentUpon>CornJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\DeletedJobsPage.generated.cs">
+      <DependentUpon>DeletedJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\EnqueuedJobsPage.cs">
+      <DependentUpon>EnqueuedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\EnqueuedJobsPage.generated.cs">
+      <DependentUpon>EnqueuedJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FailedJobsPage.generated.cs">
+      <DependentUpon>FailedJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FetchedJobsPage.cs">
+      <DependentUpon>FetchedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FetchedJobsPage.generated.cs">
+      <DependentUpon>FetchedJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\HomePage.cs">
+      <DependentUpon>HomePage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\HomePage.generated.cs">
+      <DependentUpon>HomePage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\InlineMetric.cs">
+      <DependentUpon>_InlineMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\JobDetailsPage.cs">
+      <DependentUpon>JobDetailsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\JobDetailsPage1.generated.cs">
+      <DependentUpon>JobDetailsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\LayoutPage.cs">
+      <DependentUpon>LayoutPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\LayoutPage.generated.cs">
+      <DependentUpon>LayoutPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ProcessingJobsPage.generated.cs">
+      <DependentUpon>ProcessingJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\QueuesPage.generated.cs">
+      <DependentUpon>QueuesPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\CornJobsPage.generated.cs">
+      <DependentUpon>CornJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\RecurringJobsPage.generated.cs">
+      <DependentUpon>RecurringJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\RetriesPage.generated.cs">
+      <DependentUpon>RetriesPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ScheduledJobsPage.generated.cs">
+      <DependentUpon>ScheduledJobsPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ServersPage.generated.cs">
+      <DependentUpon>ServersPage.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\SidebarMenu.cs">
+      <DependentUpon>_SidebarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\SucceededJobs1.generated.cs">
+      <DependentUpon>SucceededJobs.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Breadcrumbs.generated.cs">
+      <DependentUpon>_Breadcrumbs.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_BlockMetric.generated.cs">
+      <DependentUpon>_BlockMetric.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_InlineMetric.generated.cs">
+      <DependentUpon>_InlineMetric.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Navigation.generated.cs">
+      <DependentUpon>_Navigation.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Paginator.cs">
+      <DependentUpon>_Paginator.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Paginator.generated.cs">
+      <DependentUpon>_Paginator.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_PerPageSelector.cs">
+      <DependentUpon>_PerPageSelector.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_PerPageSelector.generated.cs">
+      <DependentUpon>_PerPageSelector.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_SidebarMenu.generated.cs">
+      <DependentUpon>_SidebarMenu.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Dashboard\Content\resx\Strings.resx">
+      <CustomToolNamespace>Hangfire.Dashboard.Resources</CustomToolNamespace>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dashboard\Pages\AwaitingJobsPage.cshtml">
+      <LastGenOutput>AwaitingJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\DeletedJobsPage.cshtml">
+      <LastGenOutput>DeletedJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\EnqueuedJobsPage.cshtml">
+      <LastGenOutput>EnqueuedJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\FailedJobsPage.cshtml">
+      <LastGenOutput>FailedJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\FetchedJobsPage.cshtml">
+      <LastGenOutput>FetchedJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\HomePage.cshtml">
+      <LastGenOutput>HomePage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\JobDetailsPage.cshtml">
+      <LastGenOutput>JobDetailsPage1.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\LayoutPage.cshtml">
+      <LastGenOutput>LayoutPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\ProcessingJobsPage.cshtml">
+      <LastGenOutput>ProcessingJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\QueuesPage.cshtml">
+      <LastGenOutput>QueuesPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\CornJobsPage.cshtml">
+      <LastGenOutput>RecurringJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\RecurringJobsPage.cshtml">
+      <LastGenOutput>RecurringJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\RetriesPage.cshtml">
+      <LastGenOutput>RetriesPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\ScheduledJobsPage.cshtml">
+      <LastGenOutput>ScheduledJobsPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\ServersPage.cshtml">
+      <LastGenOutput>ServersPage.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\SucceededJobs.cshtml">
+      <LastGenOutput>SucceededJobs1.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_BlockMetric.cshtml">
+      <LastGenOutput>_BlockMetric.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_Breadcrumbs.cshtml">
+      <LastGenOutput>_Breadcrumbs.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_InlineMetric.cshtml">
+      <LastGenOutput>_InlineMetric.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_Navigation.cshtml">
+      <LastGenOutput>_Navigation.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_Paginator.cshtml">
+      <LastGenOutput>_Paginator.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_PerPageSelector.cshtml">
+      <LastGenOutput>_PerPageSelector.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Update="Dashboard\Pages\_SidebarMenu.cshtml">
+      <LastGenOutput>_SidebarMenu.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+﻿{
+    "Name": "Hangfire Common Plugin",
+    "Version": "1.0.0",
+    "Description": "通用插件",
+    "Dependencies": [
+    ]
+}

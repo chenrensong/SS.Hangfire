@@ -1,0 +1,13 @@
+﻿@* Generator: Template TypeVisibility: Internal GeneratePrettyNames: True TrimLeadingUnderscores : true *@
+@using Hangfire.Dashboard
+@inherits RazorPage
+
+//http://blog.davidebbo.com/2011/06/precompile-your-mvc-views-using.html
+<ol class="breadcrumb">
+    <li><a href="@Url.Home()"><span class="glyphicon glyphicon-home"></span></a></li>
+    @foreach (var item in Items)
+    {
+        <li><a href="@item.Value">@item.Key</a></li>
+    }
+    <li class="active">@Title</li>
+</ol>

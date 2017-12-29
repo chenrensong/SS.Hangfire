@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="App_Data\Plugin\Hangfire.Common.Plugin\plugin.json" />
+    <Content Remove="App_Data\Plugin\Hangfire.NodeServices\plugin.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App_Data\Plugin\Hangfire.Common.Plugin\plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Plugin\Hangfire.NodeServices\plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hangfire.Console\Hangfire.Console.csproj" />
+    <ProjectReference Include="..\Hangfire.Core\Hangfire.Core.csproj" />
+    <ProjectReference Include="..\Hangfire.SqlServer\Hangfire.SqlServer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App_Data\Plugin\Hangfire.Common.Plugin\Hangfire.Common.Plugin.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="App_Data\Plugin\Hangfire.NodeServices\Hangfire.NodeServices.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="App_Data\Plugin\Hangfire.NodeServices\Node\prerenderPage.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="App_Data\Plugin\Hangfire.NodeServices\Node\renderChart.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="App_Data\Plugin\Hangfire.NodeServices\Node\transpilation.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
